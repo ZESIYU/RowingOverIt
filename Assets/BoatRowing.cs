@@ -11,13 +11,13 @@ public class BoatMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    float lastLeftAngle;
-    float lastRightAngle;
+    float lastLeftAngle=0;
+    float lastRightAngle=0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.linearDamping = 1.5f;            // 防止无限加速
+        rb.linearDamping = 0.5f;            // 防止无限加速
         rb.angularDamping = 2f;
     }
 
@@ -30,9 +30,10 @@ public class BoatMovement : MonoBehaviour
 
         if (stroke > 0f)
         {
-            Vector3 force = transform.forward * stroke * power;
+            Vector3 force = -transform.right * stroke * power;
             rb.AddForce(force, ForceMode.Force);
         }
+        Debug.Log($"leftDelta={leftDelta}, rightDelta={rightDelta}");
     }
 
     float GetStrokeDelta(Transform pivot, ref float lastAngle)
@@ -50,7 +51,6 @@ public class BoatMovement : MonoBehaviour
         if (Mathf.Abs(angle) > maxAngle)
             return 0f;
 
-        // 只在“往后划”时产生推进
-        return Mathf.Max(0f, -delta);
+        return delta;
     }
 }
