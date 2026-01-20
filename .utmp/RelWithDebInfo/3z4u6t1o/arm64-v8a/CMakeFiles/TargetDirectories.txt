@@ -1,0 +1,8 @@
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/sheng/Desktop/ji_files/2026_Winter/RowingOverIt/.utmp/RelWithDebInfo/3z4u6t1o/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
