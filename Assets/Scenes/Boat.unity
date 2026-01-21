@@ -608,7 +608,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648870136}
   serializedVersion: 5
-  m_Mass: 10
+  m_Mass: 20
   m_LinearDamping: 1.5
   m_AngularDamping: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -684,10 +684,10 @@ MonoBehaviour:
   leftPivot: {fileID: 531767667}
   rightPivot: {fileID: 1353774064}
   forwardPower: 50
-  turnPower: 4
+  turnPower: 15
   maxAngle: 80
   linearDamping: 0.5
-  angularDamping: 3
+  angularDamping: 1.5
 --- !u!1 &722554919
 GameObject:
   m_ObjectHideFlags: 0
