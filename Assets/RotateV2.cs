@@ -3,6 +3,7 @@ using UnityEngine;
 public class OarPivotFromHandV2 : MonoBehaviour
 {
     public Transform hand;
+    public Transform reference;   // 👈 BoatRoot
     public float rotateSpeed = 1f;
     public bool invert = false;
 
@@ -10,13 +11,13 @@ public class OarPivotFromHandV2 : MonoBehaviour
 
     void Start()
     {
-        if (hand != null)
+        if (hand != null && reference != null)
             lastHandDir = GetHandDir();
     }
 
     void Update()
     {
-        if (hand == null)
+        if (hand == null || reference == null)
             return;
 
         Vector3 currentDir = GetHandDir();
@@ -24,17 +25,15 @@ public class OarPivotFromHandV2 : MonoBehaviour
         if (currentDir.sqrMagnitude < 0.0001f || lastHandDir.sqrMagnitude < 0.0001f)
             return;
 
-        // 计算“这一帧手柄绕 Z 轴转了多少角度”
         float deltaAngle = Vector3.SignedAngle(
             lastHandDir,
             currentDir,
-            Vector3.forward
+            Vector3.forward   // reference 本地 Z
         );
 
         if (invert)
             deltaAngle = -deltaAngle;
 
-        // 按手柄挥动速度旋转 pivot
         transform.Rotate(0f, 0f, deltaAngle * rotateSpeed, Space.Self);
 
         lastHandDir = currentDir;
@@ -42,8 +41,12 @@ public class OarPivotFromHandV2 : MonoBehaviour
 
     Vector3 GetHandDir()
     {
-        Vector3 dir = hand.position - transform.position;
-        dir.z = 0f;      // 只绕 Z 轴
+        Vector3 handLocal = reference.InverseTransformPoint(hand.position);
+        Vector3 pivotLocal = reference.InverseTransformPoint(transform.position);
+
+        Vector3 dir = handLocal - pivotLocal;
+        dir.z = 0f;
+
         return dir.normalized;
     }
 }
