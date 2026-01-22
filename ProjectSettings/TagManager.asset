@@ -11,6 +11,12 @@ TagManager:
   - Compost
   - Flame
   - Trail
+  - Wall
+  - FxTemporaire
+  - Obstacle
+  - Obstcales
+  - Rock
+  - Hammer
   layers:
   - Default
   - TransparentFX

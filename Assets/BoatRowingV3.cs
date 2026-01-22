@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 [RequireComponent(typeof(Rigidbody))]
-public class BoatMovement_VRRowing : MonoBehaviour
+public class BoatMovement_WithHaptic : MonoBehaviour
 {
     [Header("Oar Pivots")]
     public Transform leftPivot;
@@ -19,6 +20,16 @@ public class BoatMovement_VRRowing : MonoBehaviour
     public float linearDamping = 1.5f;
     public float angularDamping = 3.0f;
 
+    [Header("Haptics")]
+    public XRNode leftHand = XRNode.LeftHand;
+    public XRNode rightHand = XRNode.RightHand;
+
+    public float hapticAmplitude = 0.6f;
+    public float hapticDuration = 0.1f;
+
+    bool leftInWater = false;
+    bool rightInWater = false;
+
     Rigidbody rb;
 
     float lastLeftAngle;
@@ -33,8 +44,20 @@ public class BoatMovement_VRRowing : MonoBehaviour
 
     void FixedUpdate()
     {
-        float leftStroke  = SampleStroke(leftPivot, ref lastLeftAngle);
-        float rightStroke = SampleStroke(rightPivot, ref lastRightAngle);
+        float leftStroke = SampleStroke(
+            leftPivot,
+            ref lastLeftAngle,
+            leftHand,
+            ref leftInWater
+        );
+
+        float rightStroke = SampleStroke(
+            rightPivot,
+            ref lastRightAngle,
+            rightHand,
+            ref rightInWater
+        );
+
 
         ApplyMovement(leftStroke, rightStroke);
         LimitMaxSpeed(); 
@@ -43,8 +66,13 @@ public class BoatMovement_VRRowing : MonoBehaviour
     // =========================
     // 采样单侧桨“这一帧的有效划水量”
     // =========================
-    float SampleStroke(Transform pivot, ref float lastAngle)
-    {
+    float SampleStroke(
+        Transform pivot,
+        ref float lastAngle,
+        XRNode handNode,
+        ref bool inWater
+    )
+    {   
         if (pivot == null) return 0f;
 
         float angle = pivot.localEulerAngles.z;
@@ -53,12 +81,18 @@ public class BoatMovement_VRRowing : MonoBehaviour
         float delta = angle - lastAngle;
         lastAngle = angle;
 
-        // 不在划水区间
-        if (Mathf.Abs(angle) < 180f-maxAngle)
-            return 0f;
+        bool nowInWater = Mathf.Abs(angle) < maxAngle;
 
-        // 只认“往后划”
-        if (delta <= 0f)
+        //  刚刚入水 → 震动
+        if (nowInWater)
+        {
+            SendHaptic(handNode);
+        }
+
+        inWater = nowInWater;
+
+        // 只有在水里 & 往后划 才推进
+        if (!nowInWater || delta <= 0f)
             return 0f;
 
         return delta;
@@ -107,7 +141,7 @@ public class BoatMovement_VRRowing : MonoBehaviour
                 $"[TURN] turn={turn:F3} torque={torque.y:F2}"
             );
     }
-
+    
     void LimitMaxSpeed()
     {
         Vector3 vel = rb.linearVelocity;
@@ -126,7 +160,21 @@ public class BoatMovement_VRRowing : MonoBehaviour
         }
     }
 
+    void SendHaptic(XRNode node)
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
 
+        if (device.isValid &&
+            device.TryGetHapticCapabilities(out HapticCapabilities caps) &&
+            caps.supportsImpulse)
+        {
+            device.SendHapticImpulse(
+                0,
+                hapticAmplitude,
+                hapticDuration
+            );
+        }
+    }
 }
 
     
