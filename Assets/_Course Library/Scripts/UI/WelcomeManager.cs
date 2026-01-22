@@ -8,6 +8,7 @@ public class WelcomeManager : MonoBehaviour
     void Start()
     {
         GameState.IsGameStarted = false;
+        InputGate.InputEnabled = false;
         welcomeCanvas.SetActive(true);
         timerManager.HideTimer();
         timerManager.ResetTimer();
@@ -16,6 +17,7 @@ public class WelcomeManager : MonoBehaviour
     public void StartGame()
     {
         GameState.IsGameStarted = true;
+        InputGate.InputEnabled = true;
         welcomeCanvas.SetActive(false);
         timerManager.ShowTimer();
         timerManager.StartTimer();

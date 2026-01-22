@@ -6,7 +6,7 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public TimerManager timerManager;
-
+    public PauseMenuPositioner positioner;
 
     private InputAction menuAction;
     private bool isPaused = false;
@@ -52,14 +52,17 @@ public class PauseManager : MonoBehaviour
     void PauseGame()
     {
         isPaused = true;
+        InputGate.InputEnabled = false;
         pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         timerManager.StopTimer();
+        positioner.PlaceInFrontOfPlayer();
     }
 
     public void ResumeGame()
     {
         isPaused = false;
+        InputGate.InputEnabled = true;
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         timerManager.StartTimer();
