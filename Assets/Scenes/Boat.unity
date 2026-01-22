@@ -629,7 +629,7 @@ MonoBehaviour:
   leftPivot: {fileID: 531767667}
   rightPivot: {fileID: 1353774064}
   maxSpeed: 20
-  forwardPower: 70
+  forwardPower: 50
   turnPower: 15
   maxAngle: 80
   linearDamping: 0.35
@@ -649,13 +649,13 @@ MonoBehaviour:
   leftPivot: {fileID: 531767667}
   rightPivot: {fileID: 1353774064}
   maxSpeed: 20
-  forwardPower: 70
+  forwardPower: 50
   turnPower: 15
   maxAngle: 60
   linearDamping: 0.35
   angularDamping: 1.5
   leftHand: 4
-  rightHand: 5
+  rightHand: 8
   hapticAmplitude: 0.3
   hapticDuration: 0.1
 --- !u!1 &722554919
