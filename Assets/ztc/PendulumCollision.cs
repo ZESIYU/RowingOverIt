@@ -1,25 +1,30 @@
 using UnityEngine;
 
-public class PendulumCollision : MonoBehaviour
+public class PendulumPushNoRotate : MonoBehaviour
 {
-    [Header("击飞参数")]
-    public float hitForce = 15f;       // 力量
-    public float upwardModifier = 0.5f; // 提升 Y 方向力度
+    public float pushSpeed = 5f;
 
     void OnTriggerEnter(Collider other)
     {
-        // 检测是否有 Rigidbody
         Rigidbody rb = other.attachedRigidbody;
-        if (rb != null && !rb.isKinematic)
+        if (rb == null) return;
+
+        // 计算水平方向
+        Vector3 dir = other.transform.position - transform.position;
+        dir.y = 0f;
+        dir.Normalize();
+
+        // 直接移动 Transform，不用物理旋转
+        Vector3 newPos = other.transform.position + dir * pushSpeed;
+        other.transform.position = newPos;
+
+        // 彻底清掉角速度（保险）
+        if (!rb.isKinematic)
         {
-            // 计算击飞方向：从锤子指向物体
-            Vector3 dir = (other.transform.position - transform.position).normalized;
-
-            // 可以加上向上的分量，让物体飞起
-            dir.y += upwardModifier;
-
-            // 施加冲量
-            rb.AddForce(dir.normalized * hitForce, ForceMode.Impulse);
+            rb.angularVelocity = Vector3.zero;
         }
+
+        // 可选：禁用 Rigidbody 旋转约束（保留划船 AddTorque）
+        // rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 }
