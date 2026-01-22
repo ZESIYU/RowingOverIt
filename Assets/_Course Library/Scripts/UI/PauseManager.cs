@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public TimerManager timerManager;
+
 
     private InputAction menuAction;
     private bool isPaused = false;
@@ -52,6 +54,7 @@ public class PauseManager : MonoBehaviour
         isPaused = true;
         pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
+        timerManager.StopTimer();
     }
 
     public void ResumeGame()
@@ -59,6 +62,7 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
+        timerManager.StartTimer();
     }
 
     public void RestartGame()
