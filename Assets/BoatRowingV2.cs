@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -19,26 +20,67 @@ public class BoatMovement_VRRowing : MonoBehaviour
     public float linearDamping = 1.5f;
     public float angularDamping = 3.0f;
 
+    [Header("State")]
+    public bool isStunned = false;
     Rigidbody rb;
 
     float lastLeftAngle;
     float lastRightAngle;
 
+    RigidbodyConstraints originalConstraints;
+
     void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        rb.linearDamping = linearDamping;
-        rb.angularDamping = angularDamping;
-    }
+{
+    rb = GetComponent<Rigidbody>();
+
+    rb.linearDamping = linearDamping;
+    rb.angularDamping = angularDamping;
+
+    // 记录初始约束（非常重要）
+    originalConstraints = rb.constraints;
+}
+
+
 
     void FixedUpdate()
     {
+        if (isStunned)
+        {
+            rb.angularVelocity = Vector3.zero;
+            return;
+        }
+
         float leftStroke  = SampleStroke(leftPivot, ref lastLeftAngle);
         float rightStroke = SampleStroke(rightPivot, ref lastRightAngle);
 
         ApplyMovement(leftStroke, rightStroke);
         LimitMaxSpeed(); 
     }
+
+public void Stun(float duration)
+{
+    StopAllCoroutines();
+    StartCoroutine(StunRoutine(duration));
+}
+
+IEnumerator StunRoutine(float duration)
+{
+    isStunned = true;
+
+    // ⭐ 立刻清掉旋转
+    rb.angularVelocity = Vector3.zero;
+
+    // ⭐ 只在 stun 期间锁 Y 轴旋转
+    rb.constraints = originalConstraints | RigidbodyConstraints.FreezeRotationY;
+
+    yield return new WaitForSeconds(duration);
+
+    // ⭐ 恢复原本约束
+    rb.constraints = originalConstraints;
+
+    isStunned = false;
+}
+
 
     // =========================
     // 采样单侧桨“这一帧的有效划水量”
