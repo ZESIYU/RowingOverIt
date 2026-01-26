@@ -7,11 +7,12 @@ public class PendulumPushRB : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hit!!!");
         Rigidbody rb = other.attachedRigidbody;
         if (rb == null) return;
 
-        BoatMovement_VRRowing boat =
-            rb.GetComponent<BoatMovement_VRRowing>();
+        BoatMovement_WithHaptic boat =
+            rb.GetComponent<BoatMovement_WithHaptic>();
         if (boat == null) return;
 
         Vector3 dir = other.transform.position - transform.position;

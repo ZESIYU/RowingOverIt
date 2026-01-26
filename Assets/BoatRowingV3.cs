@@ -46,6 +46,7 @@ public class BoatMovement_WithHaptic : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.linearDamping = linearDamping;
         rb.angularDamping = angularDamping;
+        originalConstraints = rb.constraints;
     }
 
     void FixedUpdate()
@@ -85,15 +86,12 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     {
         isStunned = true;
 
-        // ⭐ 立刻清掉旋转
         rb.angularVelocity = Vector3.zero;
 
-        // ⭐ 只在 stun 期间锁 Y 轴旋转
         rb.constraints = originalConstraints | RigidbodyConstraints.FreezeRotationY;
 
         yield return new WaitForSeconds(duration);
 
-        // ⭐ 恢复原本约束
         rb.constraints = originalConstraints;
 
         isStunned = false;
