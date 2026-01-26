@@ -1013,6 +1013,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       insertIndex: -1
       addedObject: {fileID: 111860016}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 111860022}
   m_SourcePrefab: {fileID: 100100000, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
 --- !u!1 &111860014 stripped
 GameObject:
@@ -1112,6 +1115,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5, y: 0.59922653, z: 1.2}
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &111860022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111860014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d0ab2378af69c4d98045d6e2a70795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGameplayGate
 --- !u!114 &119744265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1967,7 +1982,6 @@ GameObject:
   m_Component:
   - component: {fileID: 170166288}
   - component: {fileID: 170166291}
-  - component: {fileID: 170166290}
   - component: {fileID: 170166289}
   m_Layer: 0
   m_Name: Pivot-right
@@ -2014,19 +2028,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 870ab7a4871e5d44092b7f05dd6c2ddd, type: 3}
   - {fileID: 8300000, guid: 7fb5b6f8e89e3a54e87d54261a3e6bd0, type: 3}
   - {fileID: 8300000, guid: 422ead040b874bb4da14db4d27cfb9bc, type: 3}
---- !u!114 &170166290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170166287}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4c86a255727674fa79610a445313f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OarInputGate
-  pivot: {fileID: 170166288}
 --- !u!114 &170166291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6338,7 +6339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 724432101}
   - component: {fileID: 724432104}
-  - component: {fileID: 724432103}
   - component: {fileID: 724432102}
   m_Layer: 0
   m_Name: Pivot-left
@@ -6385,19 +6385,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 870ab7a4871e5d44092b7f05dd6c2ddd, type: 3}
   - {fileID: 8300000, guid: 7fb5b6f8e89e3a54e87d54261a3e6bd0, type: 3}
   - {fileID: 8300000, guid: 422ead040b874bb4da14db4d27cfb9bc, type: 3}
---- !u!114 &724432103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724432100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4c86a255727674fa79610a445313f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OarInputGate
-  pivot: {fileID: 724432101}
 --- !u!114 &724432104
 MonoBehaviour:
   m_ObjectHideFlags: 0
