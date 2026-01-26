@@ -83,13 +83,20 @@ public class BoatMovement_WithHaptic : MonoBehaviour
 
         bool nowInWater = Mathf.Abs(angle) < maxAngle;
 
-        //  刚刚入水 → 震动
-        if (nowInWater)
+        //  刚刚入水 -> 震动
+        if (nowInWater && !inWater)
         {
             SendHaptic(handNode);
         }
 
         inWater = nowInWater;
+
+        
+            Debug.Log(
+                $"[STROKE] angle={angle:F3} delta={delta:F3} nowInWater={nowInWater}"
+            );
+        
+        
 
         // 只有在水里 & 往后划 才推进
         if (!nowInWater || delta <= 0f)
@@ -103,12 +110,12 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     // =========================
     void ApplyMovement(float leftStroke, float rightStroke)
     {
-        // ---- 1️⃣ 推进（两桨叠加）----
+        // ---- 1 推进（两桨叠加）----
         float forwardStroke = leftStroke + rightStroke;
 
         if (forwardStroke > 0f)
         {
-            // ⚠️ 你说过：船头在 -X
+            //  你说过：船头在 -X
             Vector3 forward = -transform.right;
             forward.y = 0f;
             forward.Normalize();
@@ -126,7 +133,7 @@ public class BoatMovement_WithHaptic : MonoBehaviour
             );
         }
 
-        // ---- 2️⃣ 转向（左右差）----
+        // ---- 2️ 转向（左右差）----
         float turn = rightStroke - leftStroke;
         Vector3 torque = Vector3.up * turn * turnPower;
 
@@ -158,6 +165,10 @@ public class BoatMovement_WithHaptic : MonoBehaviour
                 limitedVel.z
             );
         }
+
+        Debug.Log(
+            $"[MAXSPEED] current={rb.linearVelocity} previous={vel}"
+        );
     }
 
     void SendHaptic(XRNode node)
@@ -176,5 +187,3 @@ public class BoatMovement_WithHaptic : MonoBehaviour
         }
     }
 }
-
-    
