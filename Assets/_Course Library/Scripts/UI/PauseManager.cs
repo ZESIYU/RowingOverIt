@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
-    public TimerManager timerManager;
+    // public TimerManager timerManager;
     public PauseMenuPositioner positioner;
 
     private InputAction menuAction;
@@ -55,7 +55,7 @@ public class PauseManager : MonoBehaviour
         InputGate.InputEnabled = false;
         pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
-        timerManager.StopTimer();
+        // timerManager.StopTimer();
         positioner.PlaceInFrontOfPlayer();
     }
 
@@ -65,7 +65,7 @@ public class PauseManager : MonoBehaviour
         InputGate.InputEnabled = true;
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
-        timerManager.StartTimer();
+        // timerManager.StartTimer();
     }
 
     public void RestartGame()
