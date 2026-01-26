@@ -611,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5503,6 +5503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatMovement_VRRowing
   leftPivot: {fileID: 611239471}
   rightPivot: {fileID: 1474794671}
+  maxSpeed: 15
   forwardPower: 50
   turnPower: 15
   maxAngle: 80
