@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BoatMovement_WithHaptic : MonoBehaviour
@@ -24,6 +25,9 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     public XRNode leftHand = XRNode.LeftHand;
     public XRNode rightHand = XRNode.RightHand;
 
+    [Header("State")]
+    public bool isStunned = false;
+
     public float hapticAmplitude = 0.6f;
     public float hapticDuration = 0.1f;
 
@@ -35,6 +39,8 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     float lastLeftAngle;
     float lastRightAngle;
 
+    RigidbodyConstraints originalConstraints;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,6 +50,12 @@ public class BoatMovement_WithHaptic : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isStunned)
+        {
+            rb.angularVelocity = Vector3.zero;
+            return;
+        }
+
         float leftStroke = SampleStroke(
             leftPivot,
             ref lastLeftAngle,
@@ -61,6 +73,30 @@ public class BoatMovement_WithHaptic : MonoBehaviour
 
         ApplyMovement(leftStroke, rightStroke);
         LimitMaxSpeed(); 
+    }
+
+    public void Stun(float duration)
+    {
+        StopAllCoroutines();
+        StartCoroutine(StunRoutine(duration));
+    }
+
+    IEnumerator StunRoutine(float duration)
+    {
+        isStunned = true;
+
+        // ⭐ 立刻清掉旋转
+        rb.angularVelocity = Vector3.zero;
+
+        // ⭐ 只在 stun 期间锁 Y 轴旋转
+        rb.constraints = originalConstraints | RigidbodyConstraints.FreezeRotationY;
+
+        yield return new WaitForSeconds(duration);
+
+        // ⭐ 恢复原本约束
+        rb.constraints = originalConstraints;
+
+        isStunned = false;
     }
 
     // =========================
