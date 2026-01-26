@@ -22,6 +22,9 @@ public class WelcomeManager : MonoBehaviour
     {
         GameState.IsGameStarted = true;
         InputGate.InputEnabled = true;
+
+        Time.timeScale = 1f;
+        
         welcomeCanvas.SetActive(false);
         // timerManager.ShowTimer();
         // timerManager.StartTimer();
