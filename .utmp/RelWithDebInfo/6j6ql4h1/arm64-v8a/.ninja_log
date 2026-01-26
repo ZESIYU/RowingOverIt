@@ -1,12 +1,12 @@
 # ninja log v5
-111	308	7907794390651974	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	42bca04253a4a062
-310	550	7907794392808893	C:/Users/zhuyin/Documents/GitHub/RowingOverIt/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6j6ql4h1/obj/arm64-v8a/libswappywrapper.so	699f765f37458f
-39	1244	7907794399997276	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	381982d9565d4d13
-52	1264	7907794400197299	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a2a2c0d3fe9597f6
-25	1269	7907794400242980	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	173c513930c174c7
-13	1314	7907794400708980	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	14dea6ecaca85eda
-80	1316	7907794400739625	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e181bac938575480
-96	1433	7907794401907816	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	890b08f8667bb821
-65	1516	7907794402739600	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c46b6e3224158787
-2	1565	7907794403207130	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	2f5a02599bd02428
-1565	1655	7907794404122912	C:/Users/zhuyin/Documents/GitHub/RowingOverIt/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6j6ql4h1/obj/arm64-v8a/libgame.so	9c5694238cf4ec11
+87	241	7907985662715467	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	42bca04253a4a062
+244	435	7907985664346949	C:/Users/zhuyin/Documents/GitHub/RowingOverIt/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6j6ql4h1/obj/arm64-v8a/libswappywrapper.so	699f765f37458f
+1	1072	7907985670953624	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	173c513930c174c7
+25	1086	7907985670953624	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a2a2c0d3fe9597f6
+45	1088	7907985671120386	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	381982d9565d4d13
+17	1128	7907985671549948	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	14dea6ecaca85eda
+72	1130	7907985671549948	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e181bac938575480
+60	1238	7907985672648751	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	890b08f8667bb821
+36	1313	7907985673397912	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c46b6e3224158787
+9	1363	7907985673871380	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	2f5a02599bd02428
+1363	1449	7907985674780105	C:/Users/zhuyin/Documents/GitHub/RowingOverIt/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6j6ql4h1/obj/arm64-v8a/libgame.so	9c5694238cf4ec11
