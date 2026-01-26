@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 893912579487495670}
+  - component: {fileID: 2846908381552691219}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -26,12 +27,26 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7777307344087655983}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2846908381552691219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516788529052430156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddd57f34d3c3a346872d780c57374fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PendulumPushRB
+  pushForce: 30
+  stunTime: 0.8
 --- !u!1 &3846282332253505055
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +59,7 @@ GameObject:
   - component: {fileID: 5490067987386964154}
   - component: {fileID: 483051413730775606}
   - component: {fileID: 9076662909958147168}
+  - component: {fileID: 7511552860143354911}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -61,8 +77,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.18128, y: 0.18128, z: 0.18128}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 893912579487495670}
   m_LocalEulerAnglesHint: {x: 33.51, y: 45, z: 0}
@@ -146,3 +162,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.787466, y: 3.8487732, z: 4.780846}
   m_Center: {x: 0.012223095, y: 11.404375, z: -0.0078806495}
+--- !u!114 &7511552860143354911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846282332253505055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddd57f34d3c3a346872d780c57374fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PendulumCollision
+  pushForce: 30
+  stunTime: 0.8

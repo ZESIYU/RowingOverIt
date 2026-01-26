@@ -1,30 +1,25 @@
 using UnityEngine;
 
-public class PendulumPushNoRotate : MonoBehaviour
+public class PendulumPushRB : MonoBehaviour
 {
-    public float pushSpeed = 5f;
+    public float pushForce = 50f;
+    public float stunTime = 0.8f;
 
     void OnTriggerEnter(Collider other)
     {
         Rigidbody rb = other.attachedRigidbody;
         if (rb == null) return;
 
-        // 计算水平方向
+        BoatMovement_VRRowing boat =
+            rb.GetComponent<BoatMovement_VRRowing>();
+        if (boat == null) return;
+
         Vector3 dir = other.transform.position - transform.position;
         dir.y = 0f;
         dir.Normalize();
 
-        // 直接移动 Transform，不用物理旋转
-        Vector3 newPos = other.transform.position + dir * pushSpeed;
-        other.transform.position = newPos;
+        rb.AddForce(dir * pushForce, ForceMode.VelocityChange);
 
-        // 彻底清掉角速度（保险）
-        if (!rb.isKinematic)
-        {
-            rb.angularVelocity = Vector3.zero;
-        }
-
-        // 可选：禁用 Rigidbody 旋转约束（保留划船 AddTorque）
-        // rb.constraints = RigidbodyConstraints.FreezeRotation;
+        boat.Stun(stunTime);
     }
 }
