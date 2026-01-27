@@ -167,9 +167,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -210,6 +218,131 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 51.310207, y: 50.98802, z: 55.32521}
   m_Center: {x: -26.129736, y: 9.01326, z: -37.86046}
+--- !u!1 &1337383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337384}
+  - component: {fileID: 1337388}
+  - component: {fileID: 1337387}
+  - component: {fileID: 1337386}
+  - component: {fileID: 1337385}
+  m_Layer: 0
+  m_Name: Checkpoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1337384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 170.1, y: 15.27, z: -61.9}
+  m_LocalScale: {x: 20, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209569919}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!114 &1337385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e86e8dc5d9632144873a7db5259cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
+--- !u!65 &1337386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1337387
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337383}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 799842e6321c75e42835cf1cfaf8ad90, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1337388
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337383}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &17698078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,9 +1311,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1343,9 +1484,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1780,9 +1929,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1838,6 +1995,8 @@ MonoBehaviour:
   maxHP: 3
   currentHP: 3
   healthUI: {fileID: 2132740733}
+  failManager: {fileID: 0}
+  invincibleTime: 0.8
   rockDamageSpeed: 10
 --- !u!114 &119744265
 MonoBehaviour:
@@ -2435,6 +2594,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1610854048}
+  - {fileID: 886480703}
+  - {fileID: 1337384}
+  - {fileID: 912149685}
+  - {fileID: 1560118601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &220005839
@@ -2628,9 +2791,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3460,9 +3631,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3551,9 +3730,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3722,9 +3909,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3813,9 +4008,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3979,9 +4182,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4070,9 +4281,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4166,9 +4385,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4449,9 +4676,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4849,7 +5084,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.66
+      value: 48.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4857,7 +5092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.3
+      value: 37.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4894,6 +5129,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b9c2549002de7a4fbba40dfaf37b661, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4961,7 +5200,7 @@ MonoBehaviour:
   leftPivot: {fileID: 1083793257}
   rightPivot: {fileID: 1236694214}
   maxSpeed: 20
-  forwardPower: 60
+  forwardPower: 75
   turnPower: 10
   maxAngle: 90
   linearDamping: 0.3
@@ -5067,9 +5306,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5279,9 +5526,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5796,9 +6051,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6603,9 +6866,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6805,9 +7076,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6958,9 +7237,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7292,6 +7579,131 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &886480702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886480703}
+  - component: {fileID: 886480707}
+  - component: {fileID: 886480706}
+  - component: {fileID: 886480705}
+  - component: {fileID: 886480704}
+  m_Layer: 0
+  m_Name: Checkpoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886480703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886480702}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 228.4, y: 15.27, z: 3.7009125}
+  m_LocalScale: {x: 20, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209569919}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &886480704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886480702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e86e8dc5d9632144873a7db5259cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
+--- !u!65 &886480705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886480702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &886480706
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886480702}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 799842e6321c75e42835cf1cfaf8ad90, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &886480707
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886480702}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &895007343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7551,9 +7963,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7698,6 +8118,131 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901980880}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &912149684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912149685}
+  - component: {fileID: 912149689}
+  - component: {fileID: 912149688}
+  - component: {fileID: 912149687}
+  - component: {fileID: 912149686}
+  m_Layer: 0
+  m_Name: Checkpoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912149685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912149684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 291.8, y: 15.27, z: -171}
+  m_LocalScale: {x: 20, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209569919}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!114 &912149686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912149684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e86e8dc5d9632144873a7db5259cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
+--- !u!65 &912149687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912149684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &912149688
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912149684}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 799842e6321c75e42835cf1cfaf8ad90, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &912149689
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912149684}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &914812143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7746,9 +8291,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8121,9 +8674,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8401,9 +8962,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8492,9 +9061,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8583,9 +9160,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8674,9 +9259,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8765,9 +9358,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9358,9 +9959,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9449,9 +10058,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9615,9 +10232,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9913,9 +10538,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10076,9 +10709,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10501,9 +11142,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10729,9 +11378,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10820,9 +11477,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11497,9 +12162,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11881,7 +12554,7 @@ GameObject:
   - component: {fileID: 1451120482}
   m_Layer: 0
   m_Name: SpikeWall
-  m_TagString: Untagged
+  m_TagString: SpikeWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12062,9 +12735,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12366,9 +13047,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12508,9 +13197,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12654,14 +13351,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528980574}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -720.99, y: 45.2, z: -309.33}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -720.99, y: 45.2, z: -300.36}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 893912579016095763}
   m_Father: {fileID: 2075607363}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1528980576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13285,9 +13982,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13342,6 +14047,131 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ActionId: 8c14e969-a054-4f12-840c-4e0bd85173d9
+--- !u!1 &1560118600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560118601}
+  - component: {fileID: 1560118605}
+  - component: {fileID: 1560118604}
+  - component: {fileID: 1560118603}
+  - component: {fileID: 1560118602}
+  m_Layer: 0
+  m_Name: Checkpoint0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560118601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560118600}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -71.88, y: 15.27, z: -188.83}
+  m_LocalScale: {x: 20, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209569919}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!114 &1560118602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560118600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e86e8dc5d9632144873a7db5259cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
+--- !u!65 &1560118603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560118600}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1560118604
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560118600}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 799842e6321c75e42835cf1cfaf8ad90, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1560118605
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560118600}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1562127215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13390,9 +14220,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13769,9 +14607,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14366,9 +15212,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14457,9 +15311,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14670,9 +15532,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15984,9 +16854,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16763,9 +17641,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18026,9 +18912,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18123,7 +19017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18256,9 +19150,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19038,9 +19940,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19823,9 +20733,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6345285779419725671, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
       propertyPath: m_Name
       value: the viral solution (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54955bdd3ea19ff48a294475a33bbb3f, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
