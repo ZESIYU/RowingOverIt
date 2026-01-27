@@ -4933,7 +4933,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1799452522}
         m_TargetAssemblyTypeName: FailManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -5321,7 +5321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1799452522}
         m_TargetAssemblyTypeName: FailManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -20302,7 +20302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
