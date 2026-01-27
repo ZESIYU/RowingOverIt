@@ -15,7 +15,7 @@ public class PendulumPushRB : MonoBehaviour
             rb.GetComponent<BoatMovement_WithHaptic>();
         if (boat == null) return;
 
-        Vector3 dir = other.transform.position - transform.position;
+        Vector3 dir =  transform.position - other.transform.position;
         dir.y = 0f;
         dir.Normalize();
 
