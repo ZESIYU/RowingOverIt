@@ -3,19 +3,15 @@ using UnityEngine;
 public class WelcomeManager : MonoBehaviour
 {
     public GameObject welcomeCanvas;
-    // public TimerManager timerManager;
+    public TimerManager timerManager;
 
     void Start()
     {
         GameState.IsGameStarted = false;
         InputGate.InputEnabled = false;
         welcomeCanvas.SetActive(true);
-        // timerManager.HideTimer();
-        // timerManager.ResetTimer();
-        if (RaceTimer.Instance != null)
-        {
-            RaceTimer.Instance.StopTimer();
-        }
+        timerManager.HideTimer();
+        timerManager.ResetTimer();
     }
     
     public void StartGame()
@@ -26,12 +22,7 @@ public class WelcomeManager : MonoBehaviour
         Time.timeScale = 1f;
         
         welcomeCanvas.SetActive(false);
-        // timerManager.ShowTimer();
-        // timerManager.StartTimer();
-        if (RaceTimer.Instance != null)
-        {
-            RaceTimer.Instance.StartTimer();
-        }
+        timerManager.StartTimer();
     }
 
     public void QuitGame()
