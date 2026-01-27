@@ -54,6 +54,11 @@ public class BoatHealth : MonoBehaviour
         }
           
 
+        if (collision.gameObject.CompareTag("SpikeWall")){
+            LoseHP(1);
+            //Teleport to the check point
+        }
+
         
     }
 
