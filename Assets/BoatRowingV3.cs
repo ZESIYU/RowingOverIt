@@ -92,9 +92,9 @@ public class BoatMovement_WithHaptic : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
-        rb.angularVelocity = Vector3.zero;
-
         rb.constraints = originalConstraints;
+
+        rb.angularVelocity = Vector3.zero;
 
         isStunned = false;
 

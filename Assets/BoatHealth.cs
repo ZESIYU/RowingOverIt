@@ -38,10 +38,8 @@ public class BoatHealth : MonoBehaviour
     {
         if (!GameState.IsGameStarted) return;
         
-        if (!collision.gameObject.CompareTag("Rock"))
-            return;
-
-        float impactSpeed = collision.relativeVelocity.magnitude;
+        if (collision.gameObject.CompareTag("Rock")){
+            float impactSpeed = collision.relativeVelocity.magnitude;
 
         if (impactSpeed >= rockDamageSpeed)
         {
@@ -52,6 +50,10 @@ public class BoatHealth : MonoBehaviour
         {
             Debug.Log($"[HIT] Rock speed={impactSpeed:F1} no damage");
         }
+        }
+          
+
+        
     }
 
     void LoseHP(int amount)
