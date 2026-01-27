@@ -86,9 +86,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Boat_zy.unity
     guid: a525e5efa6171f7418fdace07698d5f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_ztc.unity
     guid: 777f4c4d26f7c0f4bbdec0fc7d1dc5a9
+  - enabled: 1
+    path: Assets/Scenes/Scene_FinishLine.unity
+    guid: f14fbc065c9c01f40b88b483953ea24f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e3f999c3abbcc41c99f610f88fbd07bd, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 5d38af9b0bb79f242a67cf0b7307cace, type: 2}
