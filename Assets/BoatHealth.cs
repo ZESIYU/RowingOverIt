@@ -52,8 +52,7 @@ public class BoatHealth : MonoBehaviour
         }
         }
           
-
-        
+ 
     }
 
     void LoseHP(int amount)

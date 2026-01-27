@@ -87,7 +87,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Boat_zy.unity
     guid: a525e5efa6171f7418fdace07698d5f4
   - enabled: 0
-    path: Assets/Scenes/Scene_ztc.unity
+    path: Assets/Scenes/Scene_ztc_old.unity
     guid: 777f4c4d26f7c0f4bbdec0fc7d1dc5a9
   - enabled: 0
     path: Assets/Scenes/Scene_FinishLine.unity
