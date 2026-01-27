@@ -7,6 +7,7 @@ public class BoatHealth : MonoBehaviour
     public int maxHP = 3;
     public int currentHP;
     public HealthUI healthUI;
+    public FailManager failManager;
 
     [Header("Rock Damage")]
     public float rockDamageSpeed = 10f; // 撞 Rock 掉血速度阈值
@@ -52,7 +53,13 @@ public class BoatHealth : MonoBehaviour
         }
         }
           
- 
+
+        if (collision.gameObject.CompareTag("SpikeWall")){
+            LoseHP(1);
+            //Teleport to the check point
+        }
+
+        
     }
 
     void LoseHP(int amount)
@@ -76,7 +83,11 @@ public class BoatHealth : MonoBehaviour
     void OnDead()
     {
         Debug.Log("Boat destroyed");
-        // TODO: 翻船 / 失败 / 重生
+        
+        if (failManager != null)
+        {
+            failManager.ShowFail(); // 显示失败界面
+        }
     }
 
     public void SetMaxHP(int newMaxHP, bool fill = true)
