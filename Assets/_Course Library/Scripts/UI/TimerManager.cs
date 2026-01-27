@@ -4,16 +4,9 @@ using TMPro;
 public class TimerManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public GameObject timerCanvas;
 
     private float elapsedTime = 0f;
     private bool isRunning = false;
-
-    void Start()
-    {
-        HideTimer();
-        ResetTimer();
-    }
 
     void Update()
     {
@@ -21,26 +14,12 @@ public class TimerManager : MonoBehaviour
             return;
 
         elapsedTime += Time.deltaTime;
-        UpdateUI();
+        UpdateTimerUI();
     }
 
-    void UpdateUI()
-    {
-        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
-
-        timerText.text = $"{minutes:00}:{seconds:00}";
-    }
-
-    public void ShowTimer()
-    {
-        timerCanvas.SetActive(true);
-    }
-
-    public void HideTimer()
-    {
-        timerCanvas.SetActive(false);
-    }
+    // ======================
+    // 控制
+    // ======================
 
     public void StartTimer()
     {
@@ -55,11 +34,44 @@ public class TimerManager : MonoBehaviour
     public void ResetTimer()
     {
         elapsedTime = 0f;
-        UpdateUI();
+        UpdateTimerUI();
     }
 
-    public float GetElapsedTime()
+    // ======================
+    // UI
+    // ======================
+
+    void UpdateTimerUI()
+    {
+        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        float seconds = elapsedTime % 60f;
+
+        timerText.text = $"{minutes:00}:{seconds:00.00}";
+    }
+
+    public void ShowTimer()
+    {
+        timerText.gameObject.SetActive(true);
+    }
+
+    public void HideTimer()
+    {
+        timerText.gameObject.SetActive(false);
+    }
+
+    // ======================
+    // 给外部用
+    // ======================
+
+    public float GetCurrentTime()
     {
         return elapsedTime;
+    }
+
+    public string GetFormattedTime()
+    {
+        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        float seconds = elapsedTime % 60f;
+        return $"{minutes:00}:{seconds:00.00}";
     }
 }
