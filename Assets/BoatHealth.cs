@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BoatHealth : MonoBehaviour
@@ -8,6 +9,9 @@ public class BoatHealth : MonoBehaviour
     public int currentHP;
     public HealthUI healthUI;
     public FailManager failManager;
+
+    public float invincibleTime = 0.8f; // 无敌时间
+    bool isInvincible = false;
 
     [Header("Rock Damage")]
     public float rockDamageSpeed = 10f; // 撞 Rock 掉血速度阈值
@@ -23,9 +27,11 @@ public class BoatHealth : MonoBehaviour
             healthUI.Init(maxHP, currentHP);
     }
 
+    
     void OnTriggerEnter(Collider other)
     {
         if (!GameState.IsGameStarted) return;
+        /*
         // ===  Hammer：必掉 1 血 ===
         if (other.CompareTag("Hammer"))
         {
@@ -33,7 +39,7 @@ public class BoatHealth : MonoBehaviour
             Debug.Log("[HIT] Hammer  -1 HP");
             return;
         }
-
+        */
         if (other.CompareTag("Heart")){
             LoseHP(-1);
         }
@@ -60,11 +66,24 @@ public class BoatHealth : MonoBehaviour
           
 
         if (collision.gameObject.CompareTag("SpikeWall")){
+            if(isInvincible) return;
             LoseHP(1);
-            //Teleport to the check point
+            StartCoroutine(InvincibleRoutine());
+            CheckpointManager.Instance.Respawn(rb);
         }
 
-        
+    }
+
+    IEnumerator InvincibleRoutine()
+    {
+        isInvincible = true;
+
+        // 可选：这里加视觉 / haptic / 音效
+        // e.g. 闪烁、手柄震动
+
+        yield return new WaitForSeconds(invincibleTime);
+
+        isInvincible = false;
     }
 
     void LoseHP(int amount)
