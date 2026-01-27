@@ -6,6 +6,7 @@ public class BoatHealth : MonoBehaviour
     [Header("Health")]
     public int maxHP = 3;
     public int currentHP;
+    public HealthUI healthUI;
 
     [Header("Rock Damage")]
     public float rockDamageSpeed = 10f; // 撞 Rock 掉血速度阈值
@@ -16,13 +17,11 @@ public class BoatHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         currentHP = maxHP;
+        healthUI.Init(maxHP, currentHP);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        float impactSpeed = collision.relativeVelocity.magnitude;
-        GameObject other = collision.gameObject;
-
         // === 1️⃣ Hammer：必掉 1 血 ===
         if (other.CompareTag("Hammer"))
         {
@@ -30,20 +29,23 @@ public class BoatHealth : MonoBehaviour
             Debug.Log("[HIT] Hammer  -1 HP");
             return;
         }
+    }
 
-        // === 2️⃣ Rock：速度 > 阈值才掉血 ===
-        if (other.CompareTag("Rock"))
-        {
-            if (impactSpeed >= rockDamageSpeed)
-            {
-                LoseHP(1);
-                Debug.Log($"[HIT] Rock speed={impactSpeed:F1}  -1 HP");
-            }
-            else
-            {
-                Debug.Log($"[HIT] Rock speed={impactSpeed:F1}  no damage");
-            }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.gameObject.CompareTag("Rock"))
             return;
+
+        float impactSpeed = collision.relativeVelocity.magnitude;
+
+        if (impactSpeed >= rockDamageSpeed)
+        {
+            LoseHP(1);
+            Debug.Log($"[HIT] Rock speed={impactSpeed:F1} -1 HP");
+        }
+        else
+        {
+            Debug.Log($"[HIT] Rock speed={impactSpeed:F1} no damage");
         }
     }
 
@@ -56,6 +58,8 @@ public class BoatHealth : MonoBehaviour
         currentHP = Mathf.Max(currentHP, 0);
 
         Debug.Log($"Boat HP = {currentHP}/{maxHP}");
+
+        healthUI.UpdateHP(currentHP);
 
         if (currentHP == 0)
         {
