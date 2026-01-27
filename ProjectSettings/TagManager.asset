@@ -17,6 +17,7 @@ TagManager:
   - Obstcales
   - Rock
   - Hammer
+  - SpikeWall
   layers:
   - Default
   - TransparentFX
