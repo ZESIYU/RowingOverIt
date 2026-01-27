@@ -17,11 +17,14 @@ public class BoatHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         currentHP = maxHP;
-        healthUI.Init(maxHP, currentHP);
+
+        if (healthUI != null)
+            healthUI.Init(maxHP, currentHP);
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (!GameState.IsGameStarted) return;
         // === 1️⃣ Hammer：必掉 1 血 ===
         if (other.CompareTag("Hammer"))
         {
@@ -33,6 +36,8 @@ public class BoatHealth : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!GameState.IsGameStarted) return;
+        
         if (!collision.gameObject.CompareTag("Rock"))
             return;
 
@@ -71,5 +76,23 @@ public class BoatHealth : MonoBehaviour
     {
         Debug.Log("Boat destroyed");
         // TODO: 翻船 / 失败 / 重生
+    }
+
+    public void SetMaxHP(int newMaxHP, bool fill = true)
+    {
+        maxHP = newMaxHP;
+
+        if (fill)
+            currentHP = maxHP;
+        else
+            currentHP = Mathf.Min(currentHP, maxHP);
+
+        if (healthUI != null)
+            healthUI.Init(maxHP, currentHP);
+    }
+
+    public void AddMaxHP(int amount)
+    {
+        SetMaxHP(maxHP + amount);
     }
 }

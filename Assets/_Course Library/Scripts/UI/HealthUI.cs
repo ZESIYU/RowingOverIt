@@ -8,23 +8,37 @@ public class HealthUI : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    [Header("Heart Images")]
-    public List<Image> hearts;
+    [Header("Hearts")]
+    public List<Image> hearts; // 手动拖入所有爱心 Image
 
+    // ======================
+    // 初始化显示
+    // ======================
     public void Init(int maxHP, int currentHP)
     {
-        for (int i = 0; i < hearts.Count; i++)
-        {
-            hearts[i].gameObject.SetActive(i < maxHP);
-            hearts[i].sprite = i < currentHP ? fullHeart : emptyHeart;
-        }
+        UpdateHP(currentHP);
     }
 
     public void UpdateHP(int currentHP)
     {
         for (int i = 0; i < hearts.Count; i++)
         {
-            hearts[i].sprite = i < currentHP ? fullHeart : emptyHeart;
+            if (i < currentHP)
+                hearts[i].sprite = fullHeart;
+            else
+                hearts[i].sprite = emptyHeart;
         }
+    }
+
+    public void Show()
+    {
+        foreach (var heart in hearts)
+            heart.gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        foreach (var heart in hearts)
+            heart.gameObject.SetActive(false);
     }
 }

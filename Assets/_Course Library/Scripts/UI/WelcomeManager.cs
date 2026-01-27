@@ -4,12 +4,14 @@ public class WelcomeManager : MonoBehaviour
 {
     public GameObject welcomeCanvas;
     public TimerManager timerManager;
+    public HealthUI healthUI;
 
     void Start()
     {
         GameState.IsGameStarted = false;
         InputGate.InputEnabled = false;
         welcomeCanvas.SetActive(true);
+        healthUI.Hide();
         timerManager.HideTimer();
         timerManager.ResetTimer();
     }
@@ -18,6 +20,7 @@ public class WelcomeManager : MonoBehaviour
     {
         GameState.IsGameStarted = true;
         InputGate.InputEnabled = true;
+        healthUI.Show();
 
         Time.timeScale = 1f;
         
