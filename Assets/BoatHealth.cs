@@ -26,13 +26,18 @@ public class BoatHealth : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (!GameState.IsGameStarted) return;
-        // === 1️⃣ Hammer：必掉 1 血 ===
+        // ===  Hammer：必掉 1 血 ===
         if (other.CompareTag("Hammer"))
         {
             LoseHP(1);
             Debug.Log("[HIT] Hammer  -1 HP");
             return;
         }
+
+        if (other.CompareTag("Heart")){
+            LoseHP(-1);
+        }
+        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -69,6 +74,7 @@ public class BoatHealth : MonoBehaviour
 
         currentHP -= amount;
         currentHP = Mathf.Max(currentHP, 0);
+        currentHP = Mathf.Min(currentHP, maxHP);
 
         Debug.Log($"Boat HP = {currentHP}/{maxHP}");
 

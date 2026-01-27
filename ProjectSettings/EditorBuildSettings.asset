@@ -89,10 +89,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scene_ztc_old.unity
     guid: 777f4c4d26f7c0f4bbdec0fc7d1dc5a9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Scene_FinishLine.unity
     guid: f14fbc065c9c01f40b88b483953ea24f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_zy.unity
     guid: 1999ce54e3d3ff64baa3cff7650f7589
   m_configObjects:

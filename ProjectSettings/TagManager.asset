@@ -18,6 +18,7 @@ TagManager:
   - Rock
   - Hammer
   - SpikeWall
+  - Heart
   layers:
   - Default
   - TransparentFX
