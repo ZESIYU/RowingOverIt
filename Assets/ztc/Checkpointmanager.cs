@@ -34,7 +34,7 @@ public class CheckpointManager : MonoBehaviour
             if (currentIndex >= checkpoints.Length)
                 return null;
 
-            return checkpoints[currentIndex];
+            return checkpoints[currentIndex+1];
         }
     }
 
@@ -48,9 +48,10 @@ public class CheckpointManager : MonoBehaviour
         checkpointRot = rot;
         hasCheckpoint = true;
 
-        currentIndex++;
-
         Debug.Log($"Checkpoint {index} reached");
+
+        currentIndex=index;
+
     }
 
     // =========================
