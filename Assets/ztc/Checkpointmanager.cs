@@ -100,10 +100,14 @@ public class CheckpointManager : MonoBehaviour
     rb.linearVelocity = Vector3.zero;
     rb.angularVelocity = Vector3.zero;
 
-    rb.position = cp.position;
+    Vector3 pos = rb.position;
+    pos.x = cp.position.x;
+    pos.z = cp.position.z;
+    rb.position = pos;
+
 
     // ✅ 关键修正：checkpoint X → boat Z
-    rb.rotation = Quaternion.LookRotation(cp.right, Vector3.up);
+    //rb.rotation = Quaternion.LookRotation(cp.right, Vector3.up);
 
     currentIndex = index;
 

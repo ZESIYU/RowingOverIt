@@ -107,6 +107,7 @@ public class PauseManager : MonoBehaviour
         pausePanel.SetActive(false);
         respawnPanel.SetActive(false);
 
+        isPaused = false;
         InputGate.InputEnabled = true;
     }
 }
