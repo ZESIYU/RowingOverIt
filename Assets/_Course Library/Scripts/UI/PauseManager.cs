@@ -7,6 +7,10 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseCanvas;
     public TimerManager timerManager;
     public PauseMenuPositioner positioner;
+    public GameObject pausePanel;
+    public GameObject respawnPanel;
+
+    Rigidbody playerRB;
 
     private InputAction menuAction;
     private bool isPaused = false;
@@ -47,6 +51,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
+        playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
     void PauseGame()
@@ -57,6 +62,8 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         timerManager.StopTimer();
         positioner.PlaceInFrontOfPlayer();
+        pausePanel.SetActive(true);
+        respawnPanel.SetActive(false);
     }
 
     public void ResumeGame()
@@ -66,11 +73,40 @@ public class PauseManager : MonoBehaviour
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         timerManager.StartTimer();
+        pausePanel.SetActive(false);
+        respawnPanel.SetActive(false);
     }
 
     public void RestartGame()
     {
         Time.timeScale = 1f;   // 非常重要：先恢复时间
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OpenRespawnMenu()
+    {
+        pausePanel.SetActive(false);
+        respawnPanel.SetActive(true);
+    }
+
+    public void BackToPause()
+    {
+        pausePanel.SetActive(true);
+        respawnPanel.SetActive(false);
+    }
+
+    public void TeleportToCheckpoint(int checkpointIndex)
+    {
+        Time.timeScale = 1f;
+
+        CheckpointManager.Instance.TeleportToCheckpoint(
+            checkpointIndex,
+            playerRB
+        );
+
+        pausePanel.SetActive(false);
+        respawnPanel.SetActive(false);
+
+        InputGate.InputEnabled = true;
     }
 }

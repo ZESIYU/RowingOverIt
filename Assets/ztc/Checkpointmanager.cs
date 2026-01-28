@@ -13,6 +13,7 @@ public class CheckpointManager : MonoBehaviour
     Vector3 checkpointPos;
     Quaternion checkpointRot;
     bool hasCheckpoint = false;
+    int unlockedMaxIndex = 0;
 
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class CheckpointManager : MonoBehaviour
         Debug.Log($"Checkpoint {index} reached");
 
         currentIndex=index;
+        unlockedMaxIndex = Mathf.Max(unlockedMaxIndex, index);
 
     }
 
@@ -67,4 +69,44 @@ public class CheckpointManager : MonoBehaviour
         rb.position = checkpointPos;
         rb.rotation = checkpointRot;
     }
+
+    public void RespawnAtIndex(int index, Rigidbody rb)
+    {
+        if (index > unlockedMaxIndex) return;
+
+        Transform cp = checkpoints[index];
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        rb.position = cp.position;
+        rb.rotation = cp.rotation;
+
+        currentIndex = index;
+
+        Debug.Log($"Respawn at checkpoint {index}");
+    }
+
+    public void TeleportToCheckpoint(int index, Rigidbody rb)
+{
+    if (index < 0 || index >= checkpoints.Length)
+    {
+        Debug.LogWarning("Invalid checkpoint index");
+        return;
+    }
+
+    Transform cp = checkpoints[index];
+
+    rb.linearVelocity = Vector3.zero;
+    rb.angularVelocity = Vector3.zero;
+
+    rb.position = cp.position;
+
+    // ✅ 关键修正：checkpoint X → boat Z
+    rb.rotation = Quaternion.LookRotation(cp.right, Vector3.up);
+
+    currentIndex = index;
+
+    Debug.Log($"Teleported to checkpoint {index}");
+}
 }
