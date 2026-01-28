@@ -14,6 +14,7 @@ public class BoatGameplayGate : MonoBehaviour
     {
         if (!InputGate.InputEnabled)
         {
+            Debug.Log("freeze");
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }

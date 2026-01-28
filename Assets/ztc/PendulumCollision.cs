@@ -7,6 +7,7 @@ public class PendulumPushRB : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
         Debug.Log("Hit!!!");
         Rigidbody rb = other.attachedRigidbody;
         if (rb == null) return;
