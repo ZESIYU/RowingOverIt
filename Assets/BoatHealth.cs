@@ -31,17 +31,21 @@ public class BoatHealth : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (!GameState.IsGameStarted) return;
-        /*
+
         // ===  Hammer：必掉 1 血 ===
         if (other.CompareTag("Hammer"))
         {
+            SFXManager.Instance.Play(SFXManager.Instance.hammerHit);
+        /*
             LoseHP(1);
             Debug.Log("[HIT] Hammer  -1 HP");
             return;
-        }
         */
+        }
+
         if (other.CompareTag("Heart")){
             LoseHP(-1);
+            SFXManager.Instance.Play(SFXManager.Instance.heartPickup);
         }
         
     }
@@ -52,6 +56,7 @@ public class BoatHealth : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Rock")){
             float impactSpeed = collision.relativeVelocity.magnitude;
+            SFXManager.Instance.Play(SFXManager.Instance.rockHit);
 
         if (impactSpeed >= rockDamageSpeed)
         {
@@ -68,6 +73,7 @@ public class BoatHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("SpikeWall")){
             if(isInvincible) return;
             LoseHP(1);
+            SFXManager.Instance.Play(SFXManager.Instance.spikeHit);
             StartCoroutine(InvincibleRoutine());
             CheckpointManager.Instance.Respawn(rb);
         }
