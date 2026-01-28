@@ -10,8 +10,8 @@ public class Checkpoint : MonoBehaviour
 
         CheckpointManager.Instance.ReachCheckpoint(
             index,
-            transform.position,
-            transform.rotation
+            other.transform.position,
+            other.transform.rotation
         );
     }
 }

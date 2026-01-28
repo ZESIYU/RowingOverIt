@@ -188,7 +188,7 @@ public class BoatMovement_WithHaptic : MonoBehaviour
             Vector3 av = rb.angularVelocity;
             av.y = 0f;
             rb.angularVelocity = av;
-            
+
             Debug.Log(
                 $"[BACK] turn disabled"
             );
@@ -197,7 +197,10 @@ public class BoatMovement_WithHaptic : MonoBehaviour
 
 
         float turn = rightStroke - leftStroke;
-        Vector3 torque = Vector3.up * turn * turnPower;
+        float speedFactor = rb.linearVelocity.magnitude;
+        float turnBoost = Mathf.Lerp(1f, 2.5f, speedFactor / maxSpeed);
+
+        Vector3 torque = Vector3.up * turn * turnPower * turnBoost;
 
         if (Mathf.Abs(turn) > 0.0001f)
         {
