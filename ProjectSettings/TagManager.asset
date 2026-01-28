@@ -19,6 +19,7 @@ TagManager:
   - Hammer
   - SpikeWall
   - Heart
+  - Mushroom
   layers:
   - Default
   - TransparentFX

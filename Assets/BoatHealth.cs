@@ -43,6 +43,16 @@ public class BoatHealth : MonoBehaviour
         */
         }
 
+        if (other.CompareTag("Mushroom"))
+        {
+            SFXManager.Instance.Play(SFXManager.Instance.mushroomHit);
+        /*
+            LoseHP(1);
+            Debug.Log("[HIT] Hammer  -1 HP");
+            return;
+        */
+        }
+
         if (other.CompareTag("Heart")){
             LoseHP(-1);
             SFXManager.Instance.Play(SFXManager.Instance.heartPickup);
