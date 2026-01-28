@@ -20,6 +20,7 @@ public class FinishManager : MonoBehaviour
         float time = timerManager.GetCurrentTime();
         timerManager.StopTimer(); // ✅ 很重要，防止最后一帧跳动
         timeText.text = $"Time: {timerManager.GetFormattedTime()}";
+        SFXManager.Instance.Play(SFXManager.Instance.victory);
     }
 
     public void RestartGame()
