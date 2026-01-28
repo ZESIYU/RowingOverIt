@@ -135,11 +135,21 @@ public class BoatMovement_WithHaptic : MonoBehaviour
         
         
 
-        // 只有在水里 & 往后划 才推进
-        if (!nowInWater || delta <= 0f)
+        bool triggerPressed = IsTriggerPressed(handNode);
+
+        // 不在水里 → 没效果
+        if (!nowInWater)
             return 0f;
 
-        return delta;
+        // 正向划水（前进）
+        if (delta > 0f && !triggerPressed)
+            return delta;
+
+        // 反向划水（后退） 必须按 Trigger
+        if (delta < 0f && triggerPressed)
+            return delta;   // 注意：是负数  会倒退
+
+        return 0f;
     }
 
     // =========================
@@ -150,8 +160,6 @@ public class BoatMovement_WithHaptic : MonoBehaviour
         // ---- 1 推进（两桨叠加）----
         float forwardStroke = leftStroke + rightStroke;
 
-        if (forwardStroke > 0f)
-        {
             //  你说过：船头在 -X
             Vector3 forward = -transform.right;
             forward.y = 0f;
@@ -164,13 +172,26 @@ public class BoatMovement_WithHaptic : MonoBehaviour
             );
 
             Debug.Log(
-                $"[FORWARD] stroke={forwardStroke:F3} " +
-                $"force={force} mag={force.magnitude:F2} " +
+                $"[FORWARD] forwardstroke={forwardStroke:F3} leftStroke={leftStroke:F3} rightStroke={rightStroke:F3}" +
+                $"delta={rightStroke-leftStroke:F3} " +
                 $"vel={rb.linearVelocity}"
             );
-        }
+        
 
         // ---- 2️ 转向（左右差）----
+
+        if (forwardStroke < 0f) {
+            Vector3 av = rb.angularVelocity;
+            av.y = 0f;
+            rb.angularVelocity = av;
+            
+            Debug.Log(
+                $"[BACK] turn disabled"
+            );
+            return;
+        }
+
+
         float turn = rightStroke - leftStroke;
         Vector3 torque = Vector3.up * turn * turnPower;
 
@@ -223,4 +244,17 @@ public class BoatMovement_WithHaptic : MonoBehaviour
             );
         }
     }
+
+    bool IsTriggerPressed(XRNode node)
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(node);
+
+        if (device.TryGetFeatureValue(CommonUsages.trigger, out float value))
+        {
+            return value > 0.1f;
+        }
+
+        return false;
+    }
+
 }
