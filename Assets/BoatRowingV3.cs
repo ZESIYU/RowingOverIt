@@ -53,6 +53,7 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     {
         if (isStunned)
         {
+            Debug.Log("Stunned");
             rb.angularVelocity = Vector3.zero;
             return;
         }
@@ -86,6 +87,7 @@ public class BoatMovement_WithHaptic : MonoBehaviour
     {
         isStunned = true;
 
+        Debug.Log("Stun Begin");
         rb.angularVelocity = Vector3.zero;
 
         rb.constraints = originalConstraints | RigidbodyConstraints.FreezeRotationY;
@@ -95,8 +97,10 @@ public class BoatMovement_WithHaptic : MonoBehaviour
         rb.constraints = originalConstraints;
 
         rb.angularVelocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
 
         isStunned = false;
+        Debug.Log("Stun End");
 
     }
 

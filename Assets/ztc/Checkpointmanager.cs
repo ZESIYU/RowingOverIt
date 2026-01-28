@@ -31,9 +31,9 @@ public class CheckpointManager : MonoBehaviour
     public void Respawn(Rigidbody rb)
     {
         if (!hasCheckpoint) return;
-
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        Debug.Log("Respawn!");
+        //rb.linearVelocity = Vector3.zero;
+        //rb.angularVelocity = Vector3.zero;
 
         rb.position = checkpointPos;
         rb.rotation = checkpointRot;

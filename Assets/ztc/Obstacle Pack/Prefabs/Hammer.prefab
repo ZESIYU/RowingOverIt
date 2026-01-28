@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddd57f34d3c3a346872d780c57374fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PendulumCollision
-  pushForce: 30
+  pushForce: 25
   stunTime: 1
 --- !u!65 &5976680502613485033
 BoxCollider:
